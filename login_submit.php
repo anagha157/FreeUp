@@ -1,15 +1,19 @@
 <?php
-    session_start();
-    include('./db/config.php');
-   
     
-    if(isset($_POST['email']) && isset($_POST['pw']))
-    {
+    require './db/config.php';
+
+    
 
         $email = $_POST['email'];
-        $password = md5($_POST['pw']);
+        $password = md5($_POST['pswd']);
 
+        $email_regex = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/";
         
+        if(!preg_match($email_regex , $email)){
+        $error = "<div class='alert text-danger bg-danger'>Incorrect email</div>";
+        header("location:login_submit.php?m2=".$error);
+        }
+    
        
     
         $q1 = "SELECT * from users where email = '$email' and password = '$password'";
@@ -23,13 +27,15 @@
         {
             $_SESSION['email'] = $email;
             $_SESSION['name'] = $name;
+            header("location:index.php");
 
             
         }
         else{
-            echo "Enter Correct Credentials";
+            $error = "<div class='alert text-danger bg-danger'></div>";
+            header("location:login_submit.php?m2=".$error);
         }
-    }
+    
 
 
     
