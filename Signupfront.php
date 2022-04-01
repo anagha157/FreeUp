@@ -1,4 +1,4 @@
-<html>
+ <html>
     <head>
         <meta charset="UTF-8">
         <title> Sign-up</title>
@@ -62,15 +62,25 @@
                        <!-- <h1 class="display-2"align="center"></h1>-->
                         
                         
-                        <form>
+                        <form action="sign_up_submit.php" method="post">
                         <div class="form-group">
                             <label>Name : </label> <input type="text" class="form-control" name="name"  required="true">
                         </div>
                         <div class="form-group">
                             <label>Email: </label> <input type="text" class="form-control" name="email" required="true">
+                            <?php
+                                if(isset($_GET['m1'])){
+                                    echo $_GET['m1'];
+                                }
+                            ?>
                         </div>
                         <div class="form-group">
-                            <label>Contact : </label> <input type="int" class="form-control" name="phno" required="true">
+                            <label>Contact : </label> <input type="int" class="form-control" name="pno" required="true">
+                            <?php
+                                if(isset($_GET['m2'])){
+                                    echo $_GET['m2'];
+                                }
+                            ?>
                         </div>
                    
                             <div class="form-group">
@@ -89,7 +99,11 @@
                         <div class="form-group">
                             <label>Confirm Password : </label>
                             <input type="password" name="cpswd" placeholder="Re-Enter password" class="form-control" required="true">
-                           
+                           <?php
+                                if(isset($_GET['m3'])){
+                                    echo $_GET['m3'];
+                                }
+                            ?>
                           
                         </div>
                         <div class="form-group">
