@@ -12,31 +12,56 @@
                 margin: 0;
             }
             body{
-                 background-image: url("imgs/giftbg.jpg");
+                
                  background-repeat: no-repeat;
                  background-size: cover; 
-                  }
+                   background:
+                linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.2)), url("imgs/giftbg.jpg");
             
+                 
+                  }
+               
             .back{
                 background-color: #ebebeb;
+                float:right;
+                 border-radius: 90px;
+                 border: 5px solid transparent;
+                 padding: 20px; 
+                width: 600px;
+                height: 850px;
+                background-color: black;
+                color: white;
+               
+               
             }
             .btn-danger:hover{
                 opacity: 1;
                 color: black;
             }
-
             
-            body::-webkit-scrollbar {display: none; }
+            img{
+                height:100px;
+                width:100px;
+            
+            }
+            label{
+                color: white;
+            }     
+             body::-webkit-scrollbar {display: none; }
         </style>
     </head>
     <body>
         <br>
         
-            <div class="container rightal"> 
+            <div class="container"> 
                
                 <div class="row">
                     <div class="back col-lg-6 col-lg-offset-3">
-                        <h1 class="display-1" align="center">SIGN-UP</h1>
+                        <h1 class="display-1" align="center">SIGN-UP<img src="imgs/logo.png"></h1>
+                       <!-- <h1 class="display-2"align="center"></h1>-->
+                        
+                        
                         <form>
                         <div class="form-group">
                             <label>Name : </label> <input type="text" class="form-control" name="name"  required="true">
