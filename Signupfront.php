@@ -74,6 +74,8 @@
                                 }
                             ?>
                         </div>
+                            
+                            
                         <div class="form-group">
                             <label>Contact : </label> <input type="int" class="form-control" name="pno" required="true">
                             <?php
