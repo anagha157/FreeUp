@@ -4,12 +4,16 @@
 
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $pwd = md5($_POST['pwd']);
-    $cpwd = md5($_POST['cpwd']);
+    $pwd = $_POST['pswd'];
+//    $pwd = md5($pwd);
+    $cpwd = $_POST['cpswd'];
+//    $cpwd = md5($cpwd);
     $mobile = $_POST['pno'];
     $addr = $_POST['addr'];
     $city = $_POST['city'];
     $state = $_POST['state'];
+    $limit = 4;
+    $score = 10;
     
     $email_regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
     $contact_regex = "/^[789][0-9]{9}$/";
@@ -27,13 +31,12 @@
     }else if(!preg_match($contact_regex , $mobile )){
         $error = "<div class='alert text-danger bg-danger'>Incorrect Contact Number</div>";
         header('location:Signupfront.php?m2='.$error);
-    }else if($pwd != $cpwd){
+    }else if($pswd != $cpswd){
         $error = "<div class='alert text-danger bg-danger'>Incorrect password re-entered: Enter same password in both the feilds</div>";
         header('location:Signupfront.php?m3='.$error);
-    }
-    
-    else{
-        $sql = "INSERT INTO users (name, email, password, mobile, address, city, state, monthly_limit, score) VALUES ('$name', '$email', '$pwd', '$mobile', '$addr', '$city', '$state', 4, 10)";
+    }else{
+        $pwd=md5($pwd);
+        $sql = "INSERT INTO users (name, email, password, mobile, address, city, state, monthly_limit, score) VALUES ('$name', '$email', '$pwd', '$mobile', '$addr', '$city', '$state', '$limit', '$score')";
         $inser_query_result = mysqli_query($conn , $sql) or die(mysqli_error($conn));
         $user_id = mysqli_insert_id($conn);
         $_SESSION['id'] = $user_id;

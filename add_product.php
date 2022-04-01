@@ -11,7 +11,7 @@
         $category = $_GET['category'];
         $img = $_GET['image'];
 
-        $sql = "INSERT into items(pname, date_bought, description, city, category, image) values('$pname', '$date_bought', '$description', '$city', '$category', '$img');
+        $sql = "INSERT into items(pname, date_bought, description, city, category, image) values('$pname', '$date_bought', '$description', '$city', '$category', '$img');";
         
         if($conn->query($sql))
         {
@@ -25,6 +25,6 @@
 
 
     else{
-        echo "Kindly Login to Continue."
+        echo "Kindly Login to Continue.";
     }
 ?>
