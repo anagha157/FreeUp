@@ -107,7 +107,7 @@
                           
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block"><b style="font-size: 20px;">Sign-up</b></button>
+                            <center> <button type="submit" class="btn btn-primary"><b style="font-size: 20px;">Sign-up</b></button></center>
                         </div>   
                     </form>
                 </div>
