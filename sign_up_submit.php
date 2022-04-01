@@ -20,16 +20,16 @@
     $select_rows = mysqli_num_rows($select_query_result);
     if($select_rows!=0){
         $error = "<div class='alert text-danger bg-danger'>Email Already Exists</div>";
-        header('location:demo_sign_up.html?m1='.$error);
+        header('location:Signupfront.php?m1='.$error);
     }else if(!preg_match($email_regex, $email)){
         $error = "<div class='alert text-danger bg-danger'>Incorrect Email Id</div>";
-        header('location:demo_sign_up.html?m1='.$error);
+        header('location:Signupfront.php?m1='.$error);
     }else if(!preg_match($contact_regex , $mobile )){
         $error = "<div class='alert text-danger bg-danger'>Incorrect Contact Number</div>";
-        header('location:demo_sign_up.html?m2='.$error);
+        header('location:Signupfront.php?m2='.$error);
     }else if($pwd != $cpwd){
         $error = "<div class='alert text-danger bg-danger'>Incorrect password re-entered: Enter same password in both the feilds</div>";
-        header('location:demo_sign_up.html?m3='.$error);
+        header('location:Signupfront.php?m3='.$error);
     }
     
     else{
