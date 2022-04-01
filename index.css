@@ -136,6 +136,7 @@ input{
     border-radius: 5px;
     border-color: rgb(255, 175, 118);
 }
+/* <<<<<<< HEAD
 #reg{
     text-align: center;
     padding-left: 10px;
@@ -158,3 +159,9 @@ input{
     float: left;
 
 }
+======= */
+/* .glyphicon {
+font-size: 30px;
+color:black;
+} */ 
+/* >>>>>>> 36ceae48b510c5c9467a25f1a56d2e37097d7895 */ 
