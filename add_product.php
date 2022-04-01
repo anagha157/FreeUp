@@ -1,30 +1,41 @@
 <?php
-    session_start();
-    include('config.php');
 
-    if(isset($_SESSION['email']))
-    {
-        $pname = $_GET['pname'];
-        $date_bought = $_GET['date'];
-        $description = $_GET['description'];
-        $city = $_GET['city'];
-        $category = $_GET['category'];
-        $img = $_GET['image'];
+    include('./db/config.php');
 
-        $sql = "INSERT into items(pname, date_bought, description, city, category, image) values('$pname', '$date_bought', '$description', '$city', '$category', '$img');";
+    
+        $pname = $_POST['pname'];
+        $date_bought = date('Y-m-d', strtotime($_POST['date']));
+        $description = $_POST['descp'];
+        $city = $_POST['city'];
+        $category = $_POST['cat'];
+        $uid = $_POST['uid'];
+        $img = $_FILES['fileToUpload'];
         
+        $filename = $_FILES['fileToUpload']["name"];
+        $tempname = $_FILES["fileToUpload"]["tmp_name"];  
+        
+          
+        $folder = "image/".$filename;
+        
+
+        $sql = "INSERT INTO items(user_id, pname, date_bought, description, city, category, image) VALUES ('$uid',$pname', '$date_bought', '$description', '$city', '$category','$filename');";
+                
         if($conn->query($sql))
+            
         {
+                      
+        // Now let's move the uploaded image into the folder: image
+            if (move_uploaded_file($tempname, $folder))  {
+            $msg = "Image uploaded successfully";
+            
+            }else{
+            $msg = "Failed to upload image";
+            }
             echo "Insertion Successful";
         }
         else
         {
             echo "Something Went Wrong";
         }
-    }
-
-
-    else{
-        echo "Kindly Login to Continue.";
-    }
+    
 ?>

@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="post_script.php" method="post" enctype="multipart/form-data">
+    <form action="add_product.php" method="post" enctype="multipart/form-data">
         uid :<input type="text" value="14" name="uid">
         pname:<input type="text" name="pname">
         date:<input type="date" name="date">
