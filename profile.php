@@ -67,9 +67,7 @@
             <a href="index.php" class="btn btn-primary">BROWSE</a>
         </div>
         <br>
-        <div>
-            <a href="view_category.php" class="btn btn-primary">BROWSE</a>
-        </div>
+        
         
         <div class="table">
             <tr>
