@@ -61,6 +61,10 @@
         </center>
         <div>
             <a href="post.php" class="btn btn-primary">POST GIVEAWAY</a>
+        </div><br>
+        <br>
+        <div>
+            <a href="index.php" class="btn btn-primary">BROWSE</a>
         </div>
         <br>
         <div>

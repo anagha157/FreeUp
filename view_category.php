@@ -1,6 +1,6 @@
 <?php
 
-    
+   
     include('./db/config.php');
     //session_start();
     
@@ -14,7 +14,7 @@
 
         echo '                        
         <table border="0" width="70%" style="padding:20%;">
-            <tr border="2"> 
+            <tr border="2">
                 <th> Image </th>
                 <th> Pid </th>
                 <th> Pname </th>
@@ -39,5 +39,5 @@
         ";  
     }
     echo "</table>";
-    
+   
 ?>
