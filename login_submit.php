@@ -25,8 +25,9 @@
         
         if($rows_fetched!=0)
         {
-        
-            header("location:index.php");
+            $_SESSION['id']= $rows_fetched['user_id'];
+            $uid = $_SESSION['id'];
+            header("location:index.php?id=$uid");
         }
         else{
             $error = "<div class='alert text-danger'>Invalid Credentials</div>";

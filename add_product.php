@@ -1,6 +1,6 @@
 <?php
     include('db/config.php');
-        
+    
         
         
         /*if(isset($_POST['submit']))
@@ -27,12 +27,12 @@
             $description = $_POST['descp'];
             $city = $_POST['city'];
             $category = $_POST['cat'];
-            $uid = $_POST['uid'];
+            $uid = 14;
         
             $sql = "INSERT INTO items(user_id, pname, date_bought, description, city, category,image)VALUES('$uid','$pname','$date_bought','$description','$city','$category','{$imgData}');";
             $current_id = mysqli_query($conn, $sql) or die("<b>Error:</b> Problem on Image Insert<br/>" . mysqli_error($conn));
             if (isset($current_id)) {
-                header("Location: index.php");
+                header("Location: profile.php");
             }
         }
     }

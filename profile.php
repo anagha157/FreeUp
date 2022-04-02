@@ -1,7 +1,9 @@
 <?php
     session_start();
     include('db/config.php');
-    $query="select * from users where user_id=19";
+    $uid = $_SESSION['id'];
+    
+    $query="select * from users where user_id=14";
     $result=mysqli_query($conn,$query) or die(mysqli_error($conn));
     $row=mysqli_fetch_array($result);
 
