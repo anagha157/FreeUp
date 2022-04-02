@@ -22,8 +22,8 @@
             <option value="3">Decor/Furniture</option>
             <option value="4">Clothes</option>
         </select>
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
+        <input type="file" name="userImage" id="userImage">
+        <input type="submit" value="Upload Image" name="submit" value="">
         
     </form>
 </body>
