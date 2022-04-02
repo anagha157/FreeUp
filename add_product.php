@@ -27,7 +27,7 @@
             $description = $_POST['descp'];
             $city = $_POST['city'];
             $category = $_POST['cat'];
-            $uid = $_SESSION['id'];
+            $uid = 14;
         
             $sql = "INSERT INTO items(user_id, pname, date_bought, description, city, category,image)VALUES('$uid','$pname','$date_bought','$description','$city','$category','{$imgData}');";
             $current_id = mysqli_query($conn, $sql) or die("<b>Error:</b> Problem on Image Insert<br/>" . mysqli_error($conn));
