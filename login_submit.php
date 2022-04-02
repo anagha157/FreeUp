@@ -31,6 +31,7 @@
             header("location:demo_login.html?m1=".$error);
         }
     
+            $_SESSION['email'] = $email
 
 
     
