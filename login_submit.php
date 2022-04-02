@@ -1,35 +1,37 @@
 <?php
+
     session_start();
-    include('./db/config.php');
-   
     
-    if(isset($_POST['email']) && isset($_POST['pw']))
-    {
+    include('db/config.php');
 
         $email = $_POST['email'];
-        $password = md5($_POST['pw']);
+        $password = md5($_POST['pswd']);
+        
+        
 
+        $email_regex = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/";
         
-       
-    
-        $q1 = "SELECT * from users where email = '$email' and password = '$password'";
-        $result = $conn -> query($q1);
-        $row = $result -> fetch_assoc();
-        $name = $row['name'];
-        $num_of_rows = mysqli_num_rows($result);
+        if(!preg_match($email_regex , $email)){
+        $error = "<div class='alert text-danger'>Incorrect email</div>";
+        header("location:demo_login.php?m2=".$error);
+        }
+             
+        $select_query = "SELECT * FROM users WHERE email ='$email' AND password = '$password' ";
         
+        $result = mysqli_query($conn , $select_query) or die(mysqli_error($conn));
+        $rows_fetched = mysqli_num_rows($result);
         
-        if($num_of_rows == 1)
+        if($rows_fetched!=0)
         {
-            $_SESSION['email'] = $email;
-            $_SESSION['name'] = $name;
-
-            
+        
+            header("location:index.php");
         }
         else{
-            echo "Enter Correct Credentials";
+            $error = "<div class='alert text-danger'>Invalid Credentials</div>";
+            header("location:demo_login.html?m1=".$error);
         }
-    }
+    
+            $_SESSION['email'] = $email
 
 
     

@@ -1,95 +1,174 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-
-/* Header Section */
-
-header{
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 10px;
-    display: flex;
-    background-color: rgb(0, 0, 0);
-}
-
-
-
-header img{
-    height: 70px;
-    width: 80px;
-    /* margin: 0px 0px 0px 9%; */
-    
-}
-
-#navbar ul{
-    display: flex;
-    color: whitesmoke;
-
-
-}
-
-#navbar ul  li{
-    list-style-type: none;
-    margin: 10px;
-    /* border: 2px solid black; */
-    padding: 8px 20px;
-    color: white;
-    /* border-radius: 6px; */
-    font-size: 20px;
-
-}
-
-#navbar ul li a{
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#navbar ul li:hover{
-    color: #5555aa;
-
-    
-}
-
-/* 
-
-
-
 
 body{
     margin: 0px;
-
-
 }
-.navi{
-    background-color: black;
+#part1 {
+    background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.7), 
+          rgba(0, 0, 0, 0.8)
+        ),url('/imgs/bg.png');
+  background-size: 1650px;
+  height:750px;
+  background-repeat: no-repeat;
+  padding: 30px;
+
 }
 ul{
+    
+    display: inline;
+}
+li{
+    text-decoration: none;
+    padding: 15px;
+    font-size: 20px;
     display: inline;
     color: white;
+ display: inline;
+ font-weight: bolder;
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-/* .caro{
-    height: 400px;
-} */
-/* h1{
-    font-family: "Lucida Handwriting",cursive; 
-    background-color: tan;
- }
-img
-{
-width: 300px;
-height: 300px;
-object-fit: contain;
+h1{
+    padding:100px;
+}
+.right{
+    float: right;
+    padding-left: 100px;
+  padding-top: 30px;
+
+}
+.right a{
+    text-decoration: none;
+    color: white;
+}
+.right a:hover{
+    color: #1fdedb
+;
+}
+#demo {
+    text-align: center;
+    font-size: 60px;
+    margin-top: 0px;
+    color:white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+#tag{
+    color: rgba(249,178,67,255);
+    padding-left: 400px;
+    margin-bottom: 0px;
+}
+#c{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font: 700 2.75rem/3.375rem "Montserrat", sans-serif;
+}
+#d{
+    font: 2.75rem/3.375rem "Montserrat", sans-serif;
+    color: white;
+    font-size: 25px;
+    text-align:center;
+
+}
+#b1{
+    
+    background-color: #B76E79;
+    color: black;
+    padding:10px 50px;
+    font-size: 20px;
+    border-radius: 20px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+
+}
+#b2{
+    background-color: rgb(255, 255, 255,0);
+    font-size: 20px;
+    color: white;
+    box-shadow: none;
+    border-color: rgb(255, 255, 255);
+    padding:10px 80px;
+    border-radius: 20px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+
+}
+#button1{
+    padding-left: 460px;
 
 
 }
-.carousel-inner{
-padding: 100px 10px 40px 600px;
+#b2:hover{
+    background-color:white;
+    color: black;
+    border-color: black;
 }
-.glyphicon {
-font-size: 30px;
-color:black;
-} */ 
+#b1:hover{
+    background-color: rgba(249,178,67,0);
+    color: #1fdedb;
+    border-color: #1fdedb;
+}
+#img1{
+    padding-top: 40px;
+    border-radius: 20px;
+}
+#part2{
+    background-color: #da8995;
+    height: 1000px;
+    
+}
+.info{
+    height: 800px;
+    padding-top: 250px;
+    padding-left: 80px;
+    float: left;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.f{
+    padding: 300px;
+}
+input{
+    padding: 10px 200px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    background-color: blanchedalmond;
+    text-align: left;
+    border-radius: 5px;
+    border-color: rgb(255, 175, 118);
+}
+
+#reg{
+    text-align: center;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    background-color:rgba(249,178,67,255);
+    border-color: black; 
+    border-radius: 30px;
+    padding: 10px 170px;
+    
+}
+.card img{
+    height: 450px;
+
+}
+.card{
+    background-color: black;
+    margin-left: 50px;
+    display: inline;
+    float: left;
+    border-radius: 10px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+
+}
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    
+}
+
