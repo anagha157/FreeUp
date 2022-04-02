@@ -12,7 +12,9 @@
     //$rowsql=mysqli_fetch_array($resultsql);
     // if($rowsql['status'] != 0)
     // {
-        // header('Location : profile.php');
+    //header('Location : profile.php');
     // }
+    echo "Accepted the request!!!";
      
 ?>
+<!-- <input type="submit" value="profile" onclick="location.href='profile.php'"> -->

@@ -1,7 +1,7 @@
 <?php
     session_start();
     include('db/config.php');
-    $query="select * from users where user_id=14";
+    $query="select * from users where user_id=19";
     $result=mysqli_query($conn,$query) or die(mysqli_error($conn));
     $row=mysqli_fetch_array($result);
 
@@ -57,6 +57,13 @@
         <center>
             <h1>PROFILE</h1>
         </center>
+        <div>
+            <a href="post.php" class="btn btn-primary">POST GIVEAWAY</a>
+        </div><br>
+        <br>
+        <div>
+            <a href="index.php" class="btn btn-primary">BROWSE</a>
+        </div>
         <div class="table">
             <tr>
                 Name:

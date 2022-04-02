@@ -1,6 +1,6 @@
 <?php
 
-echo 'all is well';
+header("Location:index.html");
 
 
 ?>
