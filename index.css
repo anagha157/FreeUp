@@ -6,8 +6,8 @@ body{
         linear-gradient(
           rgba(0, 0, 0, 0.7), 
           rgba(0, 0, 0, 0.8)
-        ),url('/imgs/bg.png');
-  background-size: 1650px;
+        ),url('imgs/bg.png');
+  background-size: 1730px;
   height:750px;
   background-repeat: no-repeat;
   padding: 30px;

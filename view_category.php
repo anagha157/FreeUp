@@ -1,20 +1,20 @@
 <?php
 
-    
+   
     include('./db/config.php');
     //session_start();
-    
-        
-        //$cid = $_GET['cid'];
+   
+       
+        $cid = $_GET['id'];
 
-        $sql = "Select * from items where category = 3;";
+        $sql = "Select * from items where category = '$cid';";
 
         $result = $conn -> query($sql);
 
 
         echo '                        
         <table border="0" width="70%" style="padding:20%;">
-            <tr border="2"> 
+            <tr border="2">
                 <th> Image </th>
                 <th> Pid </th>
                 <th> Pname </th>
@@ -39,5 +39,5 @@
         ";  
     }
     echo "</table>";
-    
+   
 ?>

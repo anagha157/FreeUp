@@ -20,6 +20,8 @@
         
         $result = mysqli_query($conn , $select_query) or die(mysqli_error($conn));
         $rows_fetched = mysqli_num_rows($result);
+
+        $_SESSION['user_id'] = $rows_fetched['user_id'];
         
         if($rows_fetched!=0)
         {
