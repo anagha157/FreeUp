@@ -62,6 +62,11 @@
         <div>
             <a href="post.php" class="btn btn-primary">POST GIVEAWAY</a>
         </div>
+        <br>
+        <div>
+            <a href="view_category.php" class="btn btn-primary">BROWSE</a>
+        </div>
+        
         <div class="table">
             <tr>
                 Name:

@@ -5,9 +5,9 @@
     //session_start();
     
         
-        //$cid = $_GET['cid'];
+        $cid = $_GET['cid'];
 
-        $sql = "Select * from items where category = 3;";
+        $sql = "Select * from items where category = '$cid';";
 
         $result = $conn -> query($sql);
 
@@ -28,7 +28,7 @@
         
         echo "
             <tr> 
-                <td> <img width= '562px' height='384px' src='data:image/jpeg;base64,'".base64_encode($row['image'])."/> </td>
+                <td> <img src='data:image/jpg;base64,'".base64_encode($row['image'])."'/> </td>
                 <td>".$row['pid']." </td>
                 <td>".$row['pname']." </td>
                 <td>".$row['date_bought']." </td>
