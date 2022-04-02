@@ -103,7 +103,7 @@
                 <?php echo $row['score'];
                 $_SESSION['score'] = $row['score']; ?> points.
 
-                
+
             </tr>
 
         </div>
@@ -114,19 +114,24 @@
                 <h1>Your Products and Requests</h1>
             </center>
             <?php 
-            $_SESSION['status'] = 0;
         $sql = "select * from request where pid=(select pid from items where user_id=14); ";
         $resultquery=mysqli_query($conn,$sql) or die(mysqli_error($conn));
         while($row=mysqli_fetch_array($resultquery))
-        { ?>
+        { 
+            $_SESSION['status'] = $row['status'];
+            $_SESSION['pid'] = $row['pid'];
+            $_SESSION['buyer_id'] = $row['buyer_id'];
+            $_SESSION['rid'] = $row['rid'];
+            ?>
             ProductId : <?php echo $row['pid']; ?>
 
             UserID: <?php echo $row['buyer_id'];?>
 
             <form action="accept_request.php">
-                <input type="submit" value="Accept"  class="accept"><br>
-               
-               
+
+                <input type="submit" value="Accept" onclick="location.href = 'accept_request.php' " class="accept"><br>
+
+
             </form>
             <form action="decline_request.php">
                 <input type="submit" value="Decline">
@@ -134,16 +139,16 @@
                 <?php
                 $_SESSION['decline_id'] = $row['rid'];
                 ?>
-               <?php if($row['status']==1)
+                <?php if($row['status']==1)
              { ?>
-             <input type="submit" value="Transaction Pending">
-             <?php }
-              ?>                
+                <!-- <input type="submit" value="Transaction Pending"> -->
+                <?php }
+              ?>
 
-             </form>
+            </form>
 
             <?php } ?>
-     
+
         </div>
 
     </div>
