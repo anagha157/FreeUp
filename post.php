@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="post_script.php" method="post" enctype="multipart/form-data">
+    <form action="add_product.php" method="post" enctype="multipart/form-data">
         uid :<input type="text" value="14" name="uid">
         pname:<input type="text" name="pname">
         date:<input type="date" name="date">
@@ -22,8 +22,8 @@
             <option value="3">Decor/Furniture</option>
             <option value="4">Clothes</option>
         </select>
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
+        <input type="file" name="userImage" id="userImage">
+        <input type="submit" value="Upload Image" name="submit" value="">
         
     </form>
 </body>
