@@ -77,7 +77,7 @@
                             
                             
                         <div class="form-group">
-                            <label>Contact : </label> <input type="int" class="form-control" name="pno" required="true">
+                            <label>Contact : </label> <input type="text" class="form-control" name="pno" required="true">
                             <?php
                                 if(isset($_GET['m2'])){
                                     echo $_GET['m2'];
@@ -86,13 +86,13 @@
                         </div>
                    
                             <div class="form-group">
-                            <label>Address(Line1) : </label> <input type="int" class="form-control" name="addr" required="true">
+                            <label>Address(Line1) : </label> <input type="text" class="form-control" name="addr" required="true">
                         </div>
                             <div class="form-group">
-                            <label>State : </label> <input type="int" class="form-control" name="state" required="true">
+                            <label>State : </label> <input type="text" class="form-control" name="state" required="true">
                         </div>
                             <div class="form-group">
-                            <label>City : </label> <input type="int" class="form-control" name="city" required="true">
+                            <label>City : </label> <input type="text" class="form-control" name="city" required="true">
                         </div>
                         <div class="form-group">
                             <label>Password : </label>

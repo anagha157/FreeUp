@@ -1,11 +1,14 @@
 <?php
     
-
+    include('/db/config.php');
     session_start();
     if(isset($_SESSION['cid']))
+        
     {
+        
+        $cid = $_SESSION['cid'];
 
-        $sql = "Select * from items where category = '$_SESSION['cid']'  ";
+        $sql = "Select * from items where category = '$cid';";
 
         $result = $conn -> query($sql);
 
