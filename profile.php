@@ -24,11 +24,12 @@
     <title>Profile</title>
 
     <script>
-        $(document).ready(function(){
-            $(button).click(function(){ 
-                $(button).prop('disabled', true);
-            });
+    $(document).ready(function() {
+        $('.accept').click(function() {
+            $('.accept').prop('disabled', true);
+            $('.accept').prop(value, 'confirm');
         });
+    });
     </script>
 
 
@@ -89,34 +90,43 @@
             <br>
             <tr>
                 Limit Remaining:
-                <?php echo $row['monthly_limit'];?>
-                <button>Extend Limit</button>
+                <?php echo $row['monthly_limit'];?> <br>
+                To extend Limit by 1 : 20 points. <br>
+                <form action="extend_limit.php">
+
+                    <button>Extend Limit</button>
+                </form>
             </tr>
             <br>
             <tr>
                 Score:
-                <?php echo $row['score'];?>
+                <?php echo $row['score'];
+                $_SESSION['score'] = $row['score']; ?> points.
+
+                
             </tr>
 
         </div>
 
-        
+
         <div>
             <center>
                 <h1>Your Products and Requests</h1>
             </center>
             <?php 
-            $_SESSION['status'] = "Accept";
+            $_SESSION['status'] = 0;
         $sql = "select * from request where pid=(select pid from items where user_id=14); ";
         $resultquery=mysqli_query($conn,$sql) or die(mysqli_error($conn));
         while($row=mysqli_fetch_array($resultquery))
         { ?>
             ProductId : <?php echo $row['pid']; ?>
 
-            UserID: <?php echo $row['user_id']; ?>
+            UserID: <?php echo $row['buyer_id'];?>
 
-            <form action="">
-                <input type="submit" value=" <?php echo $_SESSION['status'] ?>" id="accept"><br>
+            <form action="accept_request.php">
+                <input type="submit" value="Accept"  class="accept"><br>
+               
+               
             </form>
             <form action="decline_request.php">
                 <input type="submit" value="Decline">
@@ -124,13 +134,16 @@
                 <?php
                 $_SESSION['decline_id'] = $row['rid'];
                 ?>
-            </form>
+               <?php if($row['status']==1)
+             { ?>
+             <input type="submit" value="Transaction Pending">
+             <?php }
+              ?>                
 
-            <?php
-        }
-    ?>
+             </form>
 
-
+            <?php } ?>
+     
         </div>
 
     </div>
